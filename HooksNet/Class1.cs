@@ -2,7 +2,7 @@
 
 namespace HooksNet
 {
-    public class GitDirectoryResolver
+    public class Class1
     {
     }
 }
