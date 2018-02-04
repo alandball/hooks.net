@@ -8,6 +8,7 @@ namespace HooksNet.Tests
         [TestMethod]
         public void TestMethod1()
         {
+            Initialization.InitHooksNet();
         }
     }
 }

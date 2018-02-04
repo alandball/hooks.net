@@ -5,14 +5,16 @@ VisualStudioVersion = 15.0.27130.2024
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HooksNet.Tests", "HooksNet.Tests\HooksNet.Tests.csproj", "{B51CDA5D-EE2F-4281-9A9E-0693FB429C57}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HooksNet", "HooksNet\HooksNet.csproj", "{35786A1C-4A65-464E-A63C-3E391C5401DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HooksNet", "HooksNet\HooksNet.csproj", "{35786A1C-4A65-464E-A63C-3E391C5401DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HooksNet.Console", "HooksNet.Console\HooksNet.Console.csproj", "{7C2CE6A2-3BFD-4C7F-A468-7E77BDE28615}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HooksNet.Console", "HooksNet.Console\HooksNet.Console.csproj", "{7C2CE6A2-3BFD-4C7F-A468-7E77BDE28615}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9D0F7688-F342-44CD-9197-C72AB8E3630A}"
 	ProjectSection(SolutionItems) = preProject
-		install.ps1 = install.ps1
+		HooksNet.nuspec = HooksNet.nuspec
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HooksNet.Console.Tests", "HooksNet.Console.Tests\HooksNet.Console.Tests.csproj", "{86C3E652-68BD-4C70-A55F-DF75B62FE3CD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,6 +34,10 @@ Global
 		{7C2CE6A2-3BFD-4C7F-A468-7E77BDE28615}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C2CE6A2-3BFD-4C7F-A468-7E77BDE28615}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C2CE6A2-3BFD-4C7F-A468-7E77BDE28615}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86C3E652-68BD-4C70-A55F-DF75B62FE3CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86C3E652-68BD-4C70-A55F-DF75B62FE3CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86C3E652-68BD-4C70-A55F-DF75B62FE3CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86C3E652-68BD-4C70-A55F-DF75B62FE3CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

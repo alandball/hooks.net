@@ -5,4 +5,17 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <Authors>hooks.net</Authors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="HooksNet">
+      <HintPath>..\HooksNet\bin\Debug\netstandard2.0\HooksNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>System</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

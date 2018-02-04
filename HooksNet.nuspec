@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>HooksNet</id>
+    <version>0.223-beta</version>
+    <authors>hooks.net</authors>
+    <owners>hooks.net</owners>
+    <licenseUrl>https://github.com/hooksnet/hooks.net/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/hooksnet/hooks.net/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Git hooks in .NET code</description>
+    <copyright>Copyright 2018 @ hooks.net</copyright>
+    <tags>git hooks .net</tags>
+  </metadata>
+  <files>
+	 <file src="HooksNet\bin\Debug\netstandard2.0\HooksNet.dll" target="lib\netstandard2.0" />
+	 <file src="HooksNet.Console\bin\Debug\netcoreapp2.0\HooksNet.Console.dll" target="lib\netstandard2.0" />
+	 <file src="HooksNet.Console\bin\Debug\netcoreapp2.0\HooksNet.Console.runtimeconfig.json" target="lib\netstandard2.0" />
+  </files>
+</package>
