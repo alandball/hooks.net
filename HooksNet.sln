@@ -14,6 +14,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.travis.yml = .travis.yml
 		build.sh = build.sh
 		HooksNet.nuspec = HooksNet.nuspec
+		readme.md = readme.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HooksNet.Console.Tests", "HooksNet.Console.Tests\HooksNet.Console.Tests.csproj", "{86C3E652-68BD-4C70-A55F-DF75B62FE3CD}"

@@ -10,6 +10,7 @@ if [ -d $artifactsFolder ]; then
 fi
 
 dotnet restore
+dotnet build
 dotnet test HooksNet.Console.Tests -c Release
 dotnet test HooksNet.Tests -c Release
 
