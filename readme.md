@@ -5,6 +5,15 @@ Run .NET code from GIT hooks
 
 ### Hook interfaces
 
+
+##### Initialization
+
+```csharp
+Initialization.InitHooksNet();
+```
+
+##### Hook interfaces
+
 | Hook name | Interface |
 | --------- | ---------------------- |
 | pre-commit| IPreCommitHook		 |
