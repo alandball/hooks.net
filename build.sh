@@ -10,9 +10,8 @@ if [ -d $artifactsFolder ]; then
 fi
 
 dotnet build
-dotnet build -c Release
-dotnet test HooksNet.Console.Tests -c Release
-dotnet test HooksNet.Tests -c Release
+dotnet test HooksNet.Console.Tests
+dotnet test HooksNet.Tests
 
 revision=${TRAVIS_JOB_ID:=1}  
 revision=$(printf "%04d" $revision)
