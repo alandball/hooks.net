@@ -3,9 +3,6 @@
 # hooks.net
 Run .NET code from GIT hooks
 
-### Hook interfaces
-
-
 ##### Initialization
 
 ```csharp
