@@ -1,9 +1,6 @@
 ﻿using System;
-using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Runtime.CompilerServices;
-using HooksNet;
 using HooksNet.Hooks;
 
 namespace HooksNet.Console

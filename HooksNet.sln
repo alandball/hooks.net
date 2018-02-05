@@ -8,6 +8,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HooksNet", "HooksNet\HooksNet.csproj", "{35786A1C-4A65-464E-A63C-3E391C5401DE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HooksNet.Console", "HooksNet.Console\HooksNet.Console.csproj", "{7C2CE6A2-3BFD-4C7F-A468-7E77BDE28615}"
+	ProjectSection(ProjectDependencies) = postProject
+		{35786A1C-4A65-464E-A63C-3E391C5401DE} = {35786A1C-4A65-464E-A63C-3E391C5401DE}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9D0F7688-F342-44CD-9197-C72AB8E3630A}"
 	ProjectSection(SolutionItems) = preProject
