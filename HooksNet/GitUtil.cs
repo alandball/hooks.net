@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Reflection;
 
 namespace HooksNet
 {
     internal class GitUtil
     {
-        private readonly string _rootPath;
         private readonly Assembly _assembly;
+        private readonly string _rootPath;
 
         public GitUtil(string rootPath, Assembly assembly)
         {
@@ -47,7 +45,7 @@ namespace HooksNet
                 var hooksDirectory = GetHooksDirectory();
                 var hookPath = Path.Combine(hooksDirectory, type);
 
-                if(File.Exists(hookPath))
+                if (File.Exists(hookPath))
                     File.Delete(hookPath);
 
                 using (var writer = File.CreateText(hookPath))

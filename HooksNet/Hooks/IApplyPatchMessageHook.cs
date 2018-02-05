@@ -1,12 +1,7 @@
-﻿using System.Collections.Generic;
-
-namespace HooksNet
+﻿namespace HooksNet.Hooks
 {
-
     public interface IApplyPatchMessageHook : IGitHook
     {
         void OnApplyPathMessage();
     }
-
-
 }

@@ -1,4 +1,4 @@
-﻿namespace HooksNet
+﻿namespace HooksNet.Hooks
 {
     public interface IPrepareCommitMessageHook : IGitHook
     {

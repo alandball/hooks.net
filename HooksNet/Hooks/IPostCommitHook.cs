@@ -1,8 +1,5 @@
-﻿using System.Collections.Generic;
-
-namespace HooksNet
+﻿namespace HooksNet.Hooks
 {
-
     public interface IPostCommitHook : IGitHook
     {
         void OnPostCommit();

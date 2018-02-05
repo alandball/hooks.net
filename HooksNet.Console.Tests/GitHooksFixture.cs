@@ -1,3 +1,5 @@
+using HooksNet.Hooks;
+
 namespace HooksNet.Console.Tests
 {
     public class GitHooksFixture : IPreCommitHook

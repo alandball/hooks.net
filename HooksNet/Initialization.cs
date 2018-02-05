@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
 using System.Reflection;
-using System.Text;
 
 namespace HooksNet
 {
@@ -13,18 +10,18 @@ namespace HooksNet
             if (assembly == null)
                 assembly = Assembly.GetCallingAssembly();
 
-            string root = new FileInfo(assembly.Location).FullName;
-            string originalPath = root;
+            var root = new FileInfo(assembly.Location).FullName;
+            var originalPath = root;
 
             while (!Directory.Exists(Path.Combine(root, ".git")))
             {
                 var info = new DirectoryInfo(root);
-                if(info.Parent == null)
+                if (info.Parent == null)
                     throw new NoGitRepositoryFoundException(originalPath);
 
                 root = new DirectoryInfo(root).Parent.FullName;
             }
-          
+
             var util = new GitUtil(root, assembly);
             util.CreateHooks();
         }
