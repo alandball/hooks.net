@@ -9,7 +9,7 @@ if [ -d $artifactsFolder ]; then
   rm -R $artifactsFolder
 fi
 
-dotnet build
+dotnet build HooksNet.sln
 dotnet test HooksNet.Console.Tests
 dotnet test HooksNet.Tests
 
