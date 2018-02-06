@@ -39,7 +39,7 @@ namespace HooksNet.Console
                 if (hasPreCommitHook)
                 {
                     var preCommitHook = (IPreCommitHook) Activator.CreateInstance(type);
-                    preCommitHook.OnPreCommit();
+                    preCommitHook.OnPreCommit(null);
                 }
             }
         }

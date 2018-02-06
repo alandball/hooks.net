@@ -2,6 +2,6 @@
 {
     public interface IPrepareCommitMessageHook : IGitHook
     {
-        void OnPrepareCommitMessage();
+        void OnPrepareCommitMessage(string message, CommitMessageSource source);
     }
 }

@@ -1,6 +1,4 @@
-﻿using HooksNet.Hooks;
-
-namespace HooksNet
+﻿namespace HooksNet.Hooks
 {
     public interface ICommitMessageHook : IGitHook
     {
