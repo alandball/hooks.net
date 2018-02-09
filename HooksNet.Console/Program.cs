@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using HooksNet.Hooks;
@@ -9,18 +11,16 @@ namespace HooksNet.Console
     {
         internal static void Main(string[] args)
         {
-            var assemblyFile = GetArg("assembly", args);
-            var hookType = GetArg("type", args);
-            if (String.IsNullOrWhiteSpace(assemblyFile))
-                throw new ApplicationException("Assembly not defined");
+            var file = GetArg("file", args);
+            var fileContent = File.ReadAllText(file);
+            var fileParseResult = FileParser.ProcessFileContent(fileContent);
 
-            System.Console.WriteLine(assemblyFile);
-            var assembly = Assembly.LoadFrom(assemblyFile);
+            var assembly = Assembly.LoadFrom(fileParseResult.AssemblyPath);
             var types = assembly.GetTypes().Where(o => !o.IsInterface && typeof(IGitHook).IsAssignableFrom(o));
 
             foreach (var type in types)
             {
-                HandlePreCommit(hookType, type);
+               HandleHook(fileParseResult, type);
             }
         }
 
@@ -31,15 +31,15 @@ namespace HooksNet.Console
                 ?.Substring(argKey.Length);
         }
 
-        private static void HandlePreCommit(string hookType, Type type)
+        private static void HandleHook(GitHookContext context, Type type)
         {
-            if (hookType == "pre-commit")
+            if (context.Type == HookType.PreCommit)
             {
                 var hasPreCommitHook = type.GetInterfaces().Any(o => o == typeof(IPreCommitHook));
                 if (hasPreCommitHook)
                 {
-                    var preCommitHook = (IPreCommitHook) Activator.CreateInstance(type);
-                    preCommitHook.OnPreCommit();
+                    var preCommitHook = (IPreCommitHook)Activator.CreateInstance(type);
+                    preCommitHook.OnPreCommit(new PreCommitHookContext(context.Files));
                 }
             }
         }

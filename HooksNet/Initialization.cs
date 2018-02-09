@@ -5,7 +5,7 @@ namespace HooksNet
 {
     public static class Initialization
     {
-        public static void InitHooksNet(Assembly assembly = null)
+        public  static void InitHooksNet(Assembly assembly)
         {
             if (assembly == null)
                 assembly = Assembly.GetCallingAssembly();
@@ -22,7 +22,7 @@ namespace HooksNet
                 root = new DirectoryInfo(root).Parent.FullName;
             }
 
-            var util = new GitUtil(root, assembly);
+            var util = new HookCreator(root, assembly);
             util.CreateHooks();
         }
     }

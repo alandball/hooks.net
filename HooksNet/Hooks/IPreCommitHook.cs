@@ -2,6 +2,6 @@
 {
     public interface IPreCommitHook : IGitHook
     {
-        void OnPreCommit();
+        void OnPreCommit(PreCommitHookContext context);
     }
 }

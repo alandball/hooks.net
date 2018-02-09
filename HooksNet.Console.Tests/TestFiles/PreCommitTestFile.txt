@@ -1,0 +1,8 @@
+﻿M	HooksNet.Console/Modified.cs
+A	HooksNet.Console/Added.cs
+D	HooksNet.Tests/Deleted.txt
+R	HooksNet/Renamed.js
+--------
+pre-commit
+--------
+{assembly}

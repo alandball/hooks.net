@@ -1,14 +1,14 @@
+using System.Collections.Generic;
 using HooksNet.Hooks;
 
 namespace HooksNet.Console.Tests
 {
     public class GitHooksFixture : IPreCommitHook
     {
-        public int OnPreCommitCalled { get; set; }
 
-        public void OnPreCommit()
+        public void OnPreCommit(PreCommitHookContext context)
         {
-            GitHookCalls.OnPreCommitCalled++;
+            GitHookCalls.PreCommitCalls.Add(context);
         }
     }
 }

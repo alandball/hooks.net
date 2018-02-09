@@ -1,13 +1,20 @@
+using System.Collections.Generic;
+
 namespace HooksNet.Console.Tests
 {
     public static class GitHookCalls
     {
-        public static void Reset()
+        public static List<PreCommitHookContext> PreCommitCalls { get; set; }
+
+        static GitHookCalls()
         {
-            OnPreCommitCalled = 0;
+            PreCommitCalls = new List<PreCommitHookContext>();
         }
 
-        public static int OnPreCommitCalled { get; set; }
+        public static void Reset()
+        {
+            PreCommitCalls = new List<PreCommitHookContext>();
+        }
 
     }
 }
