@@ -3,6 +3,8 @@ using HooksNet.Hooks;
 
 namespace HooksNet.Console.Tests
 {
+    using System.Collections.Generic;
+
     public class GitHooksFixture : IPreCommitHook
     {
 
