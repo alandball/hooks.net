@@ -13,5 +13,5 @@ dotnet build HooksNet.sln
 dotnet test HooksNet.Console.Tests
 dotnet test HooksNet.Tests
 
-dotnet pack HooksNet /p:NuspecFile=../HooksNet.nuspec -c Release -o ./artifacts /p:PackageVersion=0.2.$TRAVIS_BUILD_NUMBER
-dotnet nuget push ./HooksNet/artifacts/*.nupkg -k $NugetApikey -s https://api.nuget.org/v3/index.json
+dotnet pack HooksNet /p:NuspecFile=../HooksNet.nuspec -c Release -o ./artifacts /p:PackageVersion=0.1.$TRAVIS_BUILD_NUMBER
+dotnet nuget push ./HooksNet/artifacts/HooksNet.0.1.$TRAVIS_BUILD_NUMBER.nupkg -k $NugetApikey -s https://api.nuget.org/v3/index.json
