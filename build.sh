@@ -14,4 +14,4 @@ dotnet test HooksNet.Console.Tests
 dotnet test HooksNet.Tests
 
 dotnet pack HooksNet /p:NuspecFile=../HooksNet.nuspec -c Release -o ./artifacts
-dotnet nuget push ./HooksNet/artifacts/*.nupkg -k $NugetApikey -s https://api.nuget.org/v3/index.json
+#dotnet nuget push ./HooksNet/artifacts/*.nupkg -k $NugetApikey -s https://api.nuget.org/v3/index.json
