@@ -14,7 +14,16 @@ namespace HooksNet.Console
             var fileContent = File.ReadAllText(file);
             var fileParseResult = FileParser.ProcessFileContent(fileContent);
 
-            HandleHooks(fileParseResult);
+            try
+            {
+                HandleHooks(fileParseResult);
+            }
+            catch (Exception e)
+            {
+                System.Console.WriteLine(e);
+                Environment.ExitCode = 1;
+            }
+           
         }
 
         private static void HandleHooks(GitHookContext fileParseResult)

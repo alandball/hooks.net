@@ -13,7 +13,7 @@ dotnet build HooksNet.sln
 dotnet test HooksNet.Console.Tests
 dotnet test HooksNet.Tests
 
-revision=${TRAVIS_JOB_ID:=1}  
+revision=${TRAVIS_BUILD_NUMBER:=1}  
 revision=$(printf "%04d" $revision)
 
 dotnet pack HooksNet /p:NuspecFile=../HooksNet.nuspec -c Release -o ./artifacts --version-suffix=$revision  
