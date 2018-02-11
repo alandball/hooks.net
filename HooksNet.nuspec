@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>HooksNet</id>
-    <version>0.1</version>
+    <version>0.1.0</version>
     <authors>hooks.net</authors>
     <owners>hooks.net</owners>
     <licenseUrl>https://github.com/hooksnet/hooks.net/blob/master/LICENSE</licenseUrl>
