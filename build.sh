@@ -17,4 +17,4 @@ revision=${TRAVIS_JOB_ID:=1}
 revision=$(printf "%04d" $revision)
 
 dotnet pack HooksNet /p:NuspecFile=../HooksNet.nuspec -c Release -o ./artifacts --version-suffix=$revision  
-dotnet nuget push ./artifacts/*.nupkg -k $NugetApikey --source https://api.nuget.org/v3/index.json
+dotnet nuget push .HooksNet/artifacts/*.nupkg -k $NugetApikey -s https://api.nuget.org/v3/index.json
