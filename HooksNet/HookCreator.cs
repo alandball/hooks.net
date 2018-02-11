@@ -38,8 +38,7 @@ namespace HooksNet
             var executingAssembly = Assembly.GetExecutingAssembly();
 
             var assemblyLocation = new FileInfo(executingAssembly.Location);
-            var consoleLocation = Path.Combine("C:\\Projects\\hooks.net\\HooksNet.Console\\bin\\Debug\\netcoreapp2.0", "HooksNet.Console.dll");
-        //    var consoleLocation = Path.Combine(assemblyLocation.DirectoryName, "HooksNet.Console.dll");
+            var consoleLocation = Path.Combine(assemblyLocation.DirectoryName, "HooksNet.Console.dll");
 
             var types = new List<string>
             {
@@ -47,10 +46,7 @@ namespace HooksNet
             };
 
             var hooksDirectory = GetHooksDirectory();
-            foreach (var type in types)
-            {
-                CreateHook(hooksDirectory, type, consoleLocation);
-            }
+            foreach (var type in types) CreateHook(hooksDirectory, type, consoleLocation);
         }
 
         private void CreateHook(string hooksDirectory, string type, string consoleLocation)

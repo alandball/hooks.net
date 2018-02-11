@@ -19,8 +19,4 @@
     <PackageReference Include="NuGet.CommandLine" Version="4.5.1" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="ScriptTemplates\Partials\" />
-  </ItemGroup>
-
 </Project>

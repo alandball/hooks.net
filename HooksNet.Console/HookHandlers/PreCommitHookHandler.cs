@@ -5,7 +5,7 @@ namespace HooksNet.Console
 {
     public class PreCommitHookHandler : BaseHookHandler<IPreCommitHook>
     {
-        public readonly GitHookContext _context;
+        readonly GitHookContext _context;
 
         public PreCommitHookHandler(GitHookContext context)
         {
