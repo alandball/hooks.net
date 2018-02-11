@@ -2,7 +2,7 @@
 
 namespace HooksNet
 {
-    public class PreCommitHookContext
+    public class PreCommitHookContext : GitHookContext<PreCommitHookContext>
     {
         internal PreCommitHookContext(List<StagedFile> stagedFiles)
         {
@@ -10,5 +10,18 @@ namespace HooksNet
         }
 
         public List<StagedFile> StagedFiles { get; }
+
+        public void RestageFiles()
+        {
+            
+        }
+    }
+
+    public class GitHookContext<TType>
+    {
+        public void RunCommand()
+        {
+
+        }
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace HooksNet.Console
 {
-    class FileParser
+    static class FileParser
     {
         public static GitHookContext ProcessFileContent(string fileContent)
         {
@@ -17,7 +17,7 @@ namespace HooksNet.Console
             return new GitHookContext(changedFiles, hookType, assembly);
         }
 
-        private static HookType ParseHookType(string s)
+        internal static HookType ParseHookType(string s)
         {
             var trimmed = s.Trim();
             switch (trimmed)
@@ -29,7 +29,7 @@ namespace HooksNet.Console
             }
         }
 
-        private static List<StagedFile> ParseStagedFiles(string changedFiles)
+        internal static List<StagedFile> ParseStagedFiles(string changedFiles)
         {
             var result = new List<StagedFile>();
             var rows = changedFiles.Split("\n");
