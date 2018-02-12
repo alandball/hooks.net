@@ -1,3 +1,4 @@
+using System;
 using HooksNet.Hooks;
 
 namespace HooksNet.Console.Tests
@@ -6,9 +7,10 @@ namespace HooksNet.Console.Tests
     {
         public void OnPreCommit(PreCommitHookContext context)
         {
-            GitHookCalls.PreCommitCalls.Add(context);
+            if(GitHookCalls.FailCall)
+                throw new Exception("Failed on purpose");
 
-            context.RestageFiles();
+            GitHookCalls.PreCommitCalls.Add(context);
         }
     }
 }

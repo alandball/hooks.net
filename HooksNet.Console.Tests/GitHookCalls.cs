@@ -4,6 +4,8 @@ namespace HooksNet.Console.Tests
 {
     public static class GitHookCalls
     {
+        public static bool FailCall = false;
+
         public static List<PreCommitHookContext> PreCommitCalls { get; set; }
 
         static GitHookCalls()

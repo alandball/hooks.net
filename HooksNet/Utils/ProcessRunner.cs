@@ -2,19 +2,19 @@
 using System.IO;
 using System.Reflection;
 
-namespace HooksNet.HookContext
+namespace HooksNet.Utils
 {
-    public static class ProcessRunner
+    static class ProcessRunner
     {
-        public static ProcessResult Run(string name, string arguments)
+        internal static ProcessResult Run(string name, string arguments)
         {
             var result = new ProcessResult();
             var procStartInfo =
                 new ProcessStartInfo(name, arguments)
                 {
-                    WorkingDirectory = new FileInfo(Assembly.GetCallingAssembly().Location).DirectoryName
+                    WorkingDirectory = new FileInfo(Assembly.GetCallingAssembly().Location).DirectoryName,
+                    RedirectStandardOutput = true
                 };
-            procStartInfo.RedirectStandardOutput = true;
 
             var process = Process.Start(procStartInfo);
             process.WaitForExit();
