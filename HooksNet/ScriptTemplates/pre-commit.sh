@@ -5,8 +5,8 @@ tmpfile=$(mktemp)
 git diff --name-status --staged >> "$tmpfile"
 
 echo "$sectionBreak" >> "$tmpfile"
-echo "{type}"
+echo "{type}" >> "$tmpfile"
 echo "$sectionBreak" >> "$tmpfile"
 echo "{assembly}" >> "$tmpfile"
 
-dotnet "{console}" --file "$tmpfile"
+dotnet "{console}" --file="$tmpfile"
