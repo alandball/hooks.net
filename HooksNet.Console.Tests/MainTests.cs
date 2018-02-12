@@ -17,13 +17,16 @@ namespace HooksNet.Console.Tests
         }
 
         [TestMethod]
+
         public void Run_PreCommit_Called_Failed()
         {
             GitHookCalls.FailCall = true;
             var tempFile = CreateTempFile();
 
             Program.Main(new[] { $"--file={tempFile}" });
+
             Assert.AreEqual(1, Environment.ExitCode);
+            Environment.ExitCode = 0;
 
             File.Delete(tempFile);
         }
