@@ -10,10 +10,20 @@ namespace HooksNet.Console.Tests
     [TestClass]
     public class MainTests
     {
+        private string _tempFile;
+
         [TestInitialize]
         public void Initialize()
         {
             GitHookCalls.FailCall = false;
+        }
+
+        [TestCleanup]
+        public void Cleanup()
+        {
+            Environment.ExitCode = 0;
+            if (File.Exists(_tempFile))
+                File.Delete(_tempFile);
         }
 
         [TestMethod]
@@ -21,22 +31,20 @@ namespace HooksNet.Console.Tests
         public void Run_PreCommit_Called_Failed()
         {
             GitHookCalls.FailCall = true;
-            var tempFile = CreateTempFile();
+            CreateTempFile();
 
-            Program.Main(new[] { $"--file={tempFile}" });
+            Program.Main(new[] { $"--file={_tempFile}" });
 
             Assert.AreEqual(1, Environment.ExitCode);
-            Environment.ExitCode = 0;
 
-            File.Delete(tempFile);
         }
 
         [TestMethod]
         public void Run_PreCommit_Called()
         {
-            var tempFile = CreateTempFile();
+            CreateTempFile();
 
-            Program.Main(new[] { $"--file={tempFile}" });
+            Program.Main(new[] { $"--file={_tempFile}" });
 
             Assert.AreEqual(1, GitHookCalls.PreCommitCalls.Count);
             var call = GitHookCalls.PreCommitCalls[0];
@@ -46,25 +54,20 @@ namespace HooksNet.Console.Tests
             Assert.IsTrue(call.StagedFiles.Any(o => o.ChangeType == ChangeType.Delete && o.Path == "HooksNet.Tests/Deleted.txt"));
             Assert.IsTrue(call.StagedFiles.Any(o => o.ChangeType == ChangeType.Rename && o.Path == "HooksNet/Renamed.js"));
             Assert.AreEqual(0, Environment.ExitCode);
-
-            File.Delete(tempFile);
         }
 
-        private static string CreateTempFile()
+        private void CreateTempFile()
         {
-            string tempFile;
             var assembly = Assembly.GetExecutingAssembly();
             var stream = assembly.GetManifestResourceStream("HooksNet.Console.Tests.TestFiles.PreCommitTestFile.txt");
             using (var reader = new StreamReader(stream))
             {
-                tempFile = Path.GetTempFileName();
+                _tempFile = Path.GetTempFileName();
                 var fileContent = reader.ReadToEnd();
                 fileContent = fileContent.Replace("{assembly}", assembly.Location);
 
-                File.WriteAllText(tempFile, fileContent);
+                File.WriteAllText(_tempFile, fileContent);
             }
-
-            return tempFile;
         }
     }
 }
